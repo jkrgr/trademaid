@@ -1,5 +1,5 @@
-#TODO: Implement function
-def find(ticker):
+from ystockquote import get_price, get_change, get_volume
+def price(ticker):
     '''
     For a given 'ticker' this function returns a dict containing
     {'ticker':'T', price:'P'}
@@ -7,8 +7,14 @@ def find(ticker):
     from SEB )
     This version, a striped version of Corey Goldberg's ystockquote, fetches data from yahoo finance.
     '''
-    import urllib
-    url = 'http://finance.yahoo.com/d/quotes.csv?s=%s&f=%s' % (ticker, 'l1')
-    price = urllib.urlopen(url).read().strip().strip('"')
-    dictionary = {'ticker': ticker, 'price': price}
-    return dictionary
+    price = get_price(ticker)
+    data = {'ticker': ticker, 'price':price}
+    return data
+def change(ticker):
+	change = get_change(ticker)
+	data = {'ticker': ticker, 'change':change}
+	return data
+def volume(ticker):
+	volume = get_volume(ticker)
+	data = {'ticker': ticker, 'volume': volume}
+	return data

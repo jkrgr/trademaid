@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Information and results regarding the competition is displayed here.
 """

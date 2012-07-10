@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 This module lets a trader view his stock portfolio.
 """

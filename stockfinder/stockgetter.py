@@ -5,10 +5,9 @@ def price(ticker):
     {'ticker':'T', price:'P'}
     (Can lookup towards yahoo finance or even better - use live data
     from SEB )
-    This version, a striped version of Corey Goldberg's ystockquote, fetches data from yahoo finance.
     '''
     price = get_price(ticker)
-    data = {'ticker': ticker, 'price':price}
+    data = {'ticker': ticker, 'price': price}
     return data
 def change(ticker):
 	change = get_change(ticker)

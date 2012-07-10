@@ -7,13 +7,15 @@ fetch data from the web and return it as dicts for the other views
 to enjoy.
 """
 import stockgetter
+from django.http import HttpResponse
 
 def stockfinder_view(request):
     '''
     This view displays a HTML-page where the user can search for stocks
     on the OSL stock exchange.
     '''
-    pass
+	data = price(ticker)
+    return HttpResponse(data)
 
 class UserAction:
     pass

@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('stockfinder.views',
-    (r'^$', 'stockfinder_view'),
+    (r'^ticker/(?P<ticker>)/$', 'stockfinder_view'),
 )

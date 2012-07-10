@@ -20,7 +20,7 @@ def top_traders_month(n):
     """
     pass
 
-def top_traders_month(n):
+def top_traders_year(n):
     """
     Renders HTML and displays the n best traders of this year
     """

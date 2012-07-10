@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Lets the user to view and edit various user info.
 """

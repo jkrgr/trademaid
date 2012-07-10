@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 This module contains a set of help functions that interact with a
 stock market API (f.ex. Yahoo Finance). The functions typically

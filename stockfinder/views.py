@@ -6,7 +6,7 @@ stock market API (f.ex. Yahoo Finance). The functions typically
 fetch data from the web and return it as dicts for the other views
 to enjoy.
 """
-from stockgetter import price
+from ystockquote import get_price
 from django.http import HttpResponse
 
 def stockfinder_view(request,ticker):
@@ -14,9 +14,10 @@ def stockfinder_view(request,ticker):
     This view displays a HTML-page where the user can search for stocks
     on the OSL stock exchange.
     '''
-    data = price(ticker)
-    return HttpResponse(data)
-
+    price = get_price(ticker)
+    data = {'ticker': ticker,'price': price}
+    return HttpResponse((data['ticker'], data['price']))
+    
 class UserAction:
     pass
 

@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin, admindocs
+from django.contrib.auth.views import login, logout
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -9,8 +10,9 @@ urlpatterns = patterns('',
     #url(r'^core/portfolio', include('trademaid.core.portfolio.urls')),
     (r'^userpanel/', include('userpanel.urls')),
     (r'^ticker/',include('stockfinder.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
+    (r'^accounts/login/$',  login),
+    (r'^accounts/logout/$', logout),
+	# Uncomment the admin/doc line below to enable admin documentation:
     #(r'^admin/doc/', include('admindocs.urls')),
 
     # Uncomment the next line to enable the admin:

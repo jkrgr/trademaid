@@ -14,6 +14,7 @@ def stockfinder_view(request, ticker=None):
     This view displays a HTML-page where the user can search for stocks
     on the OSL stock exchange.
     """
+    ticker = ticker + '.OL'
     price = get_price(ticker)
     data = {'ticker': ticker,'price': price}
     return HttpResponse((data['ticker'], data['price']))

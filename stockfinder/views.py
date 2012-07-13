@@ -9,11 +9,11 @@ to enjoy.
 from stockgetter import price
 from django.http import HttpResponse
 
-def stockfinder_view(request,ticker):
-    '''
+def stockfinder_view(request, ticker=None):
+    """
     This view displays a HTML-page where the user can search for stocks
     on the OSL stock exchange.
-    '''
+    """
     data = price(ticker)
     return HttpResponse(data)
 
@@ -21,20 +21,20 @@ class UserAction:
     pass
 
 def buy(user_id, ticker, amount, price):
-    '''
+    """
     This view lets a User, with id user_id, buy "amount" number of stocks
     with ticker name ticker, to the price of "price" pr stock.
-    '''
+    """
     pass
 
 def sell(user_id, ticker, amount, price):
-    '''
+    """
     This view lets a User, with id user_id, sell "amount" number of stocks
     with ticker name ticker, to the price of "price" pr stock.
-    '''
+    """
     pass
 
 def watch(user_id, ticker):
-    '''
+    """
 
-    '''
+    """

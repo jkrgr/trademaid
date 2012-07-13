@@ -61,7 +61,7 @@ def get_all(symbol):
     return data
     
     
-def get_price(symbol): 
+def get_price(symbol):
     return __request(symbol, 'l1')
 
 

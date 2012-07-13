@@ -9,8 +9,7 @@ urlpatterns = patterns('',
     #url(r'^core/portfolio', include('trademaid.core.portfolio.urls')),
     (r'^userpanel/', include('userpanel.urls')),
     (r'^ticker/',include('stockfinder.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
+	# Uncomment the admin/doc line below to enable admin documentation:
     #(r'^admin/doc/', include('admindocs.urls')),
 
     # Uncomment the next line to enable the admin:

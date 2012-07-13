@@ -1,7 +1,8 @@
 # Django settings for verdihandel project.
-
+import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -87,7 +88,7 @@ SECRET_KEY = 'c2c*29c0%6zmr)hc@8!i12$!v%k0_$3_3v27@&amp;k-0it2h^!5^%'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,7 +106,7 @@ ROOT_URLCONF = 'core.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'core.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/jk/dev/core/templates',)
+TEMPLATE_DIRS = (PROJECT_PATH+'/templates/',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

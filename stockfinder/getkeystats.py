@@ -10,19 +10,21 @@ def getkeystats(ticker):
 	t = soup.findAll('table')
 	key_stats = {}
 	data = []
-	linje = 0
+	#linje = 0
 	for table in t:
 		rows = table.findAll('tr')
 		for tr in rows:
 			#print tr
 			cols = tr.findAll('td')
 			for td in cols:
+				#Uncomment these lines when debugging to obtain a variables index in the data-list
+				'''
 				print "Linje nr"
 				print linje
+				'''
 				print td.findAll(text=True)
 				data.append(td.findAll(text=True))
-				linje = linje +1 
-	print data[39]
+				#linje = linje +1 
 	key_stats['PB']=float(data[39].pop())
 	key_stats['PS']=float(data[40].pop())
 	#key_stats['EBITDA']=float(data[44].pop())

@@ -10,7 +10,32 @@ class Company(models.Model):
 		self.name=name
 		self.openForTrade = openForTrade
 
+class CompanyStatistics(models.Model):
+	id = models.AutoField(primary_key=True)
+	ticker = models.ForeignKey(Company)
+	p_e = models.DecimalField(max_digits=15, decimal_places=2)
+	p_b = models.DecimalField(max_digits=15, decimal_places=2)
+	ebitda = models.DecimalField(max_digits=15, decimal_places=2)
+	recordDateTime = models.DateField(auto_now=True)
+	def __init__(self, ticker, p_e, p_b, ebitda, recordDateTime):
+		self.ticker=ticker
+		self.p_e=p_e
+		self.p_b=p_b
+		self.ebitda=ebitda
+		self.recordDateTime=recordDateTime
 
+class CompanyAnalysis(models.Model):
+	id=models.AutoField(primary_key=True)
+	userID=models.ForeignKey(User)
+	ticker=models.ForeignKey(Company)
+	text=models.CharField(max_length=1000)
+	bulls=models.IntegerField()
+	def __init__(self, userID, ticker, text, bulls):
+		self.userID=userID
+		self.ticker=ticker
+		self.text=text
+		self.bulls=bulls
+		
 class StockQuote(models.Model):
 	id = models.AutoField(primary_key=True)
 	ticker = models.ForeignKey(Company)

@@ -10,7 +10,7 @@
 <entity id="1" is_weak="false" name="Trade" x="289" y="137">
 <attributes>
 <attribute is_hidden="false" is_key="true" name="ID" type=""/>
-<attribute is_hidden="false" is_key="false" name="PlayerID" type=""/>
+<attribute is_hidden="false" is_key="false" name="UserID" type=""/>
 <attribute is_hidden="false" is_key="false" name="Ticker" type=""/>
 <attribute is_hidden="false" is_key="false" name="TradeDateTime" type=""/>
 <attribute is_hidden="false" is_key="false" name="Volume" type=""/>
@@ -18,7 +18,7 @@
 <attribute is_hidden="false" is_key="false" name="Comment" type=""/>
 </attributes>
 </entity>
-<entity id="2" is_weak="false" name="Player" x="458" y="68">
+<entity id="2" is_weak="false" name="User" x="458" y="68">
 <attributes>
 <attribute is_hidden="false" is_key="true" name="ID" type=""/>
 <attribute is_hidden="false" is_key="false" name="Name" type=""/>

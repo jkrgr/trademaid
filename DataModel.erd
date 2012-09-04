@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram height="600" made_with_version="1.5" name="Default" width="800">
+<diagram height="640" made_with_version="1.5" name="Default" width="800">
 <entity id="0" is_weak="false" name="Company" x="567" y="381">
 <attributes>
 <attribute is_hidden="false" is_key="true" name="Ticker" type=""/>
@@ -18,7 +18,7 @@
 <attribute is_hidden="false" is_key="false" name="Comment" type=""/>
 </attributes>
 </entity>
-<entity id="2" is_weak="false" name="User" x="458" y="68">
+<entity id="2" is_weak="false" name="Player" x="458" y="68">
 <attributes>
 <attribute is_hidden="false" is_key="true" name="ID" type=""/>
 <attribute is_hidden="false" is_key="false" name="Name" type=""/>
@@ -26,7 +26,7 @@
 <attribute is_hidden="false" is_key="false" name="PhoneNumber" type=""/>
 </attributes>
 </entity>
-<entity id="3" is_weak="false" name="Analysis" x="563" y="193">
+<entity id="3" is_weak="false" name="CompanyAnalysis" x="563" y="193">
 <attributes>
 <attribute is_hidden="false" is_key="false" name="PlayerID" type=""/>
 <attribute is_hidden="false" is_key="false" name="Ticker" type=""/>
@@ -88,7 +88,7 @@
 <connection connection_side="1" direction="1" object_id="6" relation_point_x="611" relation_point_y="147"/>
 </line>
 <line cardinality_string="" has_u="false" id="8" is_weak="false" role="" style="0" turned="false">
-<connection connection_side="1" direction="1" object_id="3" relation_point_x="615" relation_point_y="193"/>
+<connection connection_side="1" direction="1" object_id="3" relation_point_x="628" relation_point_y="193"/>
 <connection connection_side="3" direction="1" object_id="6" relation_point_x="611" relation_point_y="179"/>
 </line>
 <line cardinality_string="" has_u="false" id="10" is_weak="false" role="" style="0" turned="false">
@@ -96,7 +96,7 @@
 <connection connection_side="3" direction="1" object_id="9" relation_point_x="613" relation_point_y="368"/>
 </line>
 <line cardinality_string="" has_u="false" id="11" is_weak="false" role="" style="0" turned="false">
-<connection connection_side="3" direction="1" object_id="3" relation_point_x="615" relation_point_y="298"/>
+<connection connection_side="3" direction="1" object_id="3" relation_point_x="628" relation_point_y="298"/>
 <connection connection_side="1" direction="1" object_id="9" relation_point_x="613" relation_point_y="336"/>
 </line>
 <line cardinality_string="" has_u="false" id="14" is_weak="false" role="" style="0" turned="false">

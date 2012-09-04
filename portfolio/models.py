@@ -1,6 +1,14 @@
 from django.db import models
 from django.contrib.admin.models import User
 
+class Player(User):
+	name = models.CharField(max_length=50)
+	phone_number = models.IntegerField()
+	def __init__(self, name, phone_number, email):
+		base.email = email
+		self.name = name
+		self.phone_number = phone_number		
+
 class Company(models.Model):
 	ticker = models.CharField(max_length=30)
 	name = models.CharField(max_length=255)

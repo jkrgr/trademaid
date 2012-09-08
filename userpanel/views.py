@@ -32,8 +32,9 @@ def new_user_view(request):
     
 
 def save_user_view(request, user_id=None):
-    """ Saves a new user or changes on an existing one.
-    """
+    form = RegisterForm(request.POST)
+    form.save()
+    return HttpResponse('OKKKK')
 
 def userpanel_view(request):
     return HttpResponse(__name__ + '2')

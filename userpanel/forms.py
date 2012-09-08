@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from django.contrib.auth.models import User
+from core.models import User
 
 class UserForm(forms.ModelForm):
     confirm_password = forms.CharField(widget=forms.PasswordInput())
@@ -11,6 +11,6 @@ class UserForm(forms.ModelForm):
 		
 
 class RegisterForm(UserCreationForm):
-	email = forms.EmailField(label = "E-mail address")
-	phonenumber = forms.CharField(label = "Mobile phone number")
-    
+    class Meta:
+        model = User
+        fields = {'username', 'email'}

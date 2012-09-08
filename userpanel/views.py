@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from userpanel.forms import UserForm
+from userpanel.forms import User
 from userpanel.forms import RegisterForm
 from django.contrib import auth
 
@@ -34,6 +34,8 @@ def new_user_view(request):
 def save_user_view(request, user_id=None):
     """ Saves a new user or changes on an existing one.
     """
+    form = RegisterForm(request.POST)
+    form.save()
 
 def userpanel_view(request):
     return HttpResponse(__name__ + '2')

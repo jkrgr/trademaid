@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'portfolio',
     'stockfinder',
     'userpanel',
+    'companies',
 
 )
 

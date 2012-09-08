@@ -12,5 +12,5 @@ class UserForm(forms.ModelForm):
 
 class RegisterForm(UserCreationForm):
 	email = forms.EmailField(label = "E-mail address")
-	"""phonenumber = forms.TextField(label = "Mobile phone number")"""
+	phonenumber = forms.CharField(label = "Mobile phone number")
     

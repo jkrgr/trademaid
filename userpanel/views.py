@@ -3,10 +3,12 @@
 """
 Lets the user to view and edit various user info.
 """
+from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from userpanel.forms import UserForm
+from userpanel.forms import RegisterForm
 from django.contrib import auth
 
 def login_view(request):
@@ -24,14 +26,12 @@ def login_view(request):
 def new_user_view(request):
     """ Displays a form where you can add a new user
     """
-    user = User()
-    form = UserForm(instance=user)
+    form = RegisterForm()
+    
+    return render(request, 'registration/register_user.html', {'form': form, })
+    
 
-    return render_to_response('new_user_form', )
-
-    return HttpResponse(__name__ + '1')
-
-def save_user(request, user_id=None):
+def save_user_view(request, user_id=None):
     """ Saves a new user or changes on an existing one.
     """
 

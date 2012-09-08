@@ -5,6 +5,7 @@ from django.contrib.auth.views import login, logout
 urlpatterns = patterns('userpanel.views',
     (r'^$', 'userpanel_view'),
     (r'^new_user', 'new_user_view'),
+	(r'^save_user', 'save_user_view'),
     (r'^login/$',  login),
     (r'^logout/$', logout),
 )

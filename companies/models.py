@@ -6,12 +6,23 @@ class Company(models.Model):
     name = models.CharField(max_length=255)
     openForTrade = models.BooleanField()
 
+
+class CompanyStatistics(models.Model):
+    id = models.AutoField(primary_key=True)
+    company = models.ForeignKey(Company)
+    p_e = models.DecimalField(max_digits=15, decimal_places=2)
+    p_b = models.DecimalField(max_digits=15, decimal_places=2)
+    ebitda = models.DecimalField(max_digits=15, decimal_places=2)
+    recordDateTime = models.DateField(auto_now=True)
+
+
 class CompanyAnalysis(models.Model):
     id=models.AutoField(primary_key=True)
     userID=models.ForeignKey(User)
     company=models.ForeignKey(Company)
     text=models.CharField(max_length=1000)
     bulls=models.IntegerField()
+
 
 class StockQuote(models.Model):
     id = models.AutoField(primary_key=True)

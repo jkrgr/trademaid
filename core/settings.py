@@ -66,7 +66,7 @@ STATIC_ROOT = ''
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
-AUTH_PROFILE_MODULE= 'userpanel.models.UserProfile
+AUTH_PROFILE_MODULE= 'userpanel.models.UserProfile'
 
 # Additional locations of static files
 STATICFILES_DIRS = (

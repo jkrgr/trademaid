@@ -1,1 +1,1 @@
-<html><head><title>Register player</title></head><body><h1>Register as player here</h1><form action="userpanel/save_user/" method="post">{{ form.as_p }}	<input type="submit" value="Register player" /></form></body></html>
+<html><head><title>Register player</title></head><body><h1>Register as player here</h1><form action="/userpanel/save_user/" method="post">    {% csrf_token %}{{ form.as_p }}	<input type="submit" value="Register player" /></form></body></html>

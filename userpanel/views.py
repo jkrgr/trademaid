@@ -36,6 +36,9 @@ def save_user_view(request, user_id=None):
     """
     form = RegisterForm(request.POST)
     form.save()
+    form = RegisterForm(request.POST)
+    form.save()
+    return HttpResponse('OKKKK')
 
 def userpanel_view(request):
     return HttpResponse(__name__ + '2')

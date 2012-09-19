@@ -9,7 +9,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from userpanel.forms import User
 from userpanel.forms import RegisterForm
-from django.contrib import auth
+
 
 def login_view(request):
     username = request.POST.get('username', '')
@@ -23,9 +23,11 @@ def login_view(request):
     else:
         # Show an error page
         return HttpResponseRedirect("/userpanel/invalid/")
+
 def new_user_view(request):
     """ Displays a form where you can add a new user
     """
+    if request
     form = RegisterForm()
     
     return render(request, 'registration/register_user.html', {'form': form, })
@@ -34,8 +36,6 @@ def new_user_view(request):
 def save_user_view(request, user_id=None):
     """ Saves a new user or changes on an existing one.
     """
-    form = RegisterForm(request.POST)
-    form.save()
     form = RegisterForm(request.POST)
     form.save()
     return HttpResponse('OKKKK')

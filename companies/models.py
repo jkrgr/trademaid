@@ -3,13 +3,19 @@ from django.contrib.admin.models import User
 
 
 class Company(models.Model):
+    """
+    The companies of OBX
+    """
     ticker = models.CharField(max_length=30)
     name = models.CharField(max_length=255)
     openForTrade = models.BooleanField()
 
 
 class CompanyStatistics(models.Model):
-    id      = models.AutoField(primary_key=True)
+    """
+    Company statistics are regularly parsed from
+    Bloomberg. KB has written the parser.
+    """
     company = models.ForeignKey(Company)
     p_e     = models.DecimalField(max_digits=15, decimal_places=2)
     p_b     = models.DecimalField(max_digits=15, decimal_places=2)
@@ -18,7 +24,10 @@ class CompanyStatistics(models.Model):
 
 
 class CompanyAnalysis(models.Model):
-    id      = models.AutoField(primary_key=True)
+    """
+    User-uploaded analyses. Should support file uploading
+    in the future.
+    """
     userID  = models.ForeignKey(User)
     company = models.ForeignKey(Company)
     text    = models.CharField(max_length=1000)
@@ -26,8 +35,10 @@ class CompanyAnalysis(models.Model):
 
 
 class StockQuote(models.Model):
-    id      = models.AutoField(primary_key=True)
-    ticker  = models.ForeignKey(Company)
-    quote   = models.DecimalField(max_digits=15, decimal_places=2)
+    """
+    The stock quotes
+    """
+    company = models.ForeignKey(Company)
+    price   = models.DecimalField(max_digits=15, decimal_places=2)
     # When parsing the stocks, add correct date and time for last_trade
     last_trade = models.DateField(blank=False)

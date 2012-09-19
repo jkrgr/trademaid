@@ -6,11 +6,11 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
+from models import Company
+
+class CompanyTest(TestCase):
+    def test_find_company(self):
+        """ Try to find some common stocks in the DB
+        """
 
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)

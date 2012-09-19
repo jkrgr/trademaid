@@ -23,6 +23,8 @@ def login_view(request):
     else:
         # Show an error page
         return HttpResponseRedirect("/userpanel/invalid/")
+
+
 def new_user_view(request):
     """ Displays a form where you can add a new user
     """
@@ -37,6 +39,7 @@ def save_user_view(request, user_id=None):
     form = RegisterForm(request.POST)
     form.save()
     return HttpResponse('OKKKK')
+
 
 def userpanel_view(request):
     return HttpResponse(__name__ + '2')
